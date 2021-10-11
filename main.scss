@@ -1,0 +1,135 @@
+*,
+*::before,
+*::after,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(./images/taylor-van-riper-yQorCngxzwI-unsplash.jpg);
+    background-size: cover;
+}
+
+.title {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color: whitesmoke;
+}
+
+.current-forecast-title {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    color: snow;
+}
+
+.currentForecast {
+   margin: 0 auto;
+   width: 70vw;
+   padding-top: 2rem;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   grid-gap: 3rem;
+
+    &-img {
+        // grid-column: 2/3;
+        display: flex;
+        justify-content: end;
+    }
+    &-temp {
+        // grid-template: 3/4;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        // border: 1px solid #000;
+        p {
+            font-size: 2.5rem;
+            color: whitesmoke;
+        }
+    }
+    .current-wind {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: end;
+        text-align: center;
+
+        p {
+            font-size: 1.5rem;
+            color: whitesmoke;
+        }
+    }
+    .detailed-forecast {
+        font-size: 1.3rem;
+        color:white;
+    }
+}
+.title-header {
+    font-size: 1.8rem;
+    color: snow;
+    text-align: center;
+    width: 100%;
+    padding-top: 2rem;
+}
+
+.hourly-container {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 1rem;
+
+}
+.hourly-forecast {
+    margin: 0 auto;
+    width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 1rem;
+}
+.next-hour {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(135, 207, 235, 0.397);
+    border: 1px solid #000;
+    font-size: 1.1rem;
+    color: snow;
+
+    & * {
+        padding-bottom: 0.5rem;
+    }
+
+}
+
+
+.future-container {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.future-forecast {
+    margin: 0 auto;
+    width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 0.5em;
+    padding: 1rem;
+}
+.next-cycle {
+    border: 1px solid #000;
+    text-align: center;
+    color: white;
+    background-color: rgba(139, 0, 139, 0.4);
+    
+    * {
+        padding: .4rem;
+    }
+}

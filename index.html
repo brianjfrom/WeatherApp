@@ -1,0 +1,59 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <section class="title">
+        <h1>7 Day Weather Forecast <br> <span class="city"></span>, <span class="state"></span></h1>
+    </section>
+    <div class="current-forecast-title"><p class="title-name"></p></div>
+    <section class="currentForecast">
+        <div class="currentForecast-img"><img class="icon" src="" alt="weather icon"></div>
+        <div class="currentForecast-temp">
+            <p><span class="current-temp"></span>&deg;F</p>
+        </div>
+        <div class="current-wind">
+            <div class="wind-title"><p>Wind Direction:</p></div>
+            <div class="wind-speed"><p><span class="speed"></span></p></div>
+        </div>
+        <div class="detailed-forecast">
+            <p class="long-forecast">
+                
+            </p>
+        </div>
+    </section>
+    <h3 class="title-header">8 Hour Forecast</h3>
+    <div class="hourly-container">
+        <div class="hourly-forecast" hourly-forecast></div>
+        <template data-hourly-forecast>
+            <div class="next-hour">
+                <p class="time" time></p>
+                <img src="" alt="" class="hourly-icon" hourly-icon>
+                <p class="hourly-temp">
+                    <span hourly-temp></span>&deg;F
+                </p>
+                <p class="hour-forecast" hour-forecast></p>
+            </div>
+        </template>
+    </div>
+    <div class="future-container">
+        <div class="future-forecast" future-forecast></div>
+        <template data-next-day-template>
+            <div class="next-cycle">
+                <p class="next-name" next-name></p>
+                <p class="temp-next">
+                    <span temp-next></span>&deg;F
+                </p>
+                <p class="forecast-next" forecast-next></p>
+                <img weather-icon src="" alt="weather-icon">
+            </div>
+        </template>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
