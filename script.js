@@ -166,3 +166,17 @@ navigator.geolocation.getCurrentPosition((position) => {
     }
 });
 
+function forecastAnimation() {
+    const animate = document.querySelector('.hourly-container');
+    if (animate.className === "hourly-container") {
+        animate.className += " info";
+    } else {
+        animate.className = "hourly-container"
+    }
+    const carrot = document.querySelector('.carrot');
+    if (carrot.className === "carrot") {
+        carrot.className += " rotate";
+    } else {
+        carrot.className = "carrot"
+    }
+}

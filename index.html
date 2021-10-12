@@ -27,18 +27,21 @@
         </div>
     </section>
     <h3 class="title-header">8 Hour Forecast</h3>
-    <div class="hourly-container">
-        <div class="hourly-forecast" hourly-forecast></div>
-        <template data-hourly-forecast>
-            <div class="next-hour">
-                <p class="time" time></p>
-                <img src="" alt="" class="hourly-icon" hourly-icon>
-                <p class="hourly-temp">
-                    <span hourly-temp></span>&deg;F
-                </p>
-                <p class="hour-forecast" hour-forecast></p>
-            </div>
-        </template>
+    <h3 class="title-header-responsive" onclick="forecastAnimation()">8 Hour Forecast<span class="carrot">&#8897;</span></h3>
+    <div class="hourly">
+        <div class="hourly-container">
+            <div class="hourly-forecast" hourly-forecast></div>
+            <template data-hourly-forecast>
+                <div class="next-hour">
+                    <p class="time" time></p>
+                    <img src="" alt="" class="hourly-icon" hourly-icon>
+                    <p class="hourly-temp">
+                        <span hourly-temp></span>&deg;F
+                    </p>
+                    <p class="hour-forecast" hour-forecast></p>
+                </div>
+            </template>
+        </div>
     </div>
     <div class="future-container">
         <div class="future-forecast" future-forecast></div>

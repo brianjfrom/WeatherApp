@@ -1,0 +1,114 @@
+@include responsive(tab-port) {
+    .hourly-forecast {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .future-forecast {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@include responsive(phone) {
+    .future-forecast {
+        all: unset;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0.5rem;
+        padding: 1rem;
+    }
+    .currentForecast {
+        width: 90vw;
+        all: unset;
+        grid-template-rows: repeat(2, 1fr);
+
+        &-img,
+        &-temp {
+            all: unset;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding: 1rem 0;
+        }
+
+        .current-wind {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem 0;
+
+            // padding: 2rem;
+        }
+
+        .detailed-forecast {
+            margin: 0 auto;
+            width: 80vw;
+            padding-bottom: 1rem;
+            text-align: center;
+            
+        }
+    }
+}
+
+@include responsive(phone-sm){
+    .title {
+        margin-top: 1rem;
+        padding: 0 1rem;
+    }
+    .hourly {
+        position: relative;
+    }
+    .hourly-container {
+        margin: 0;
+        padding-top: 1rem;
+        position: absolute;
+        transform: scale(1, 0);
+        transform-origin: top;
+        transition: transform 500ms linear;
+        opacity: 0;
+        // transition: opacity 250ms linear;
+    }
+    
+    .hourly-forecast {
+        all: unset;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0.5rem;
+        width: 90vw;
+        
+    }
+
+    .title-header {
+        display: none;
+        
+    }
+    .title-header-responsive {
+        display: block;
+        font-size: 1.8em;
+        color: snow;
+        text-align: center;
+        width: 100vw;
+        padding: 1rem 0;
+        background-color: darkblue;
+        
+        .carrot {
+                display: block;
+                position: absolute;
+                right: 10vw;
+                display: inline;
+            }
+    }
+
+}
+.info {
+    position: relative;
+    transform: scale(1, 1);
+    // transition: transform 500ms linear;
+    opacity: 1;
+    transition: opacity 500ms linear;
+}
+.rotate {
+    transform: rotateX(180deg);
+    position: absolute;
+    right: 10vw;
+}
