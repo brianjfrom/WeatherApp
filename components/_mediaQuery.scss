@@ -47,6 +47,28 @@
             
         }
     }
+    .alertBanner {
+        padding: 0;
+        margin-bottom: 1rem;
+        
+        .alert-location {
+            margin: 0;
+            width: 100%;
+            padding: .5rem .2rem;
+        }
+       
+    }
+    .alert-btn-container {
+        padding-bottom: .5rem;
+
+        p {
+            margin: 0 auto;
+        }
+    }
+
+    .alert-description {
+        text-align: initial;
+    }
 }
 
 @include responsive(phone-sm){

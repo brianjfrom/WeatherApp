@@ -43,11 +43,75 @@ navigator.geolocation.getCurrentPosition((position) => {
             console.log(location);
             stationUri = location.forecast;
             stationHourlyUri = location.forecastHourly;
+            let locationZone = location.forecastZone;
             city = location.relativeLocation.properties.city;
             state =  location.relativeLocation.properties.state;
             document.querySelector('.city').innerHTML = city;
             document.querySelector('.state').innerHTML = state;
+
+            let zone = new Request(locationZone, {
+                method: "GET",
+                headers: h,
+                mode: "cors"
+            });
+
+            getZone()
+
+            function getZone() {
+                return fetch(zone).then((response) => {
+                    if (response.ok) {
+                        return response.json()
+                    }
+                })
+                .then((zoneInfo) => {
+                    const zone = zoneInfo.properties.id
+                    const alertUri = `https://api.weather.gov/alerts/active/zone/${zone}`
+                    // console.log(alertUri)
+                    
+                    let alertData = new Request(alertUri, {
+                        method: "GET",
+                        headers: h,
+                        mode: "cors"
+                    });
+                    
+                    getAlertData()
+                    
+                    function getAlertData() {
+                        return fetch(alertData).then((response) => {
+                            if (response.ok) {
+                                return response.json()
+                            } 
+                        })
+                        .then((currentAlertData) => {
+                            const currentAlert = currentAlertData.features[0].properties;
+                            // console.log(currentAlert)
+                            if (currentAlert !== "null") {
+                                const alertLocation = currentAlert.areaDesc;
+                                const alertSeverity = currentAlert.severity;
+                                const alertEvent = currentAlert.event;
+                                const alertDescription = currentAlert.description;
+                    
+                                // console.log(alertLocation, alertSeverity, alertEvent, alertDescription)
+                                document.querySelector('.alertBanner').style.display = "block";
+                                document.querySelector('.alert-location').innerHTML = alertLocation;
+                                document.querySelector('.alert-severity').innerHTML = alertSeverity;
+                                document.querySelector('.alert-event').innerHTML = alertEvent;
+                                document.querySelector('.alert-description').innerText = alertDescription;
+                    
+                    
+                    
+                            } else {
+                                console.log("no alerts at this time!")
+                            }
+                        })
+                    }
+
+
+                })
+            }
             
+            
+
             titleData()
 
             let forecastCurrent = new Request(stationUri, {
@@ -178,5 +242,15 @@ function forecastAnimation() {
         carrot.className += " rotate";
     } else {
         carrot.className = "carrot"
+    }
+}
+
+// console.log(getAlertData())
+function alertAnimation() {
+const action = document.querySelector('.alert-statement');
+    if (action.className === "alert-statement") {
+    action.className += " news"
+    } else {
+    action.className = "alert-statement"
     }
 }

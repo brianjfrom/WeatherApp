@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="./main.css">
 </head>
 <body>
+    <div class="alertBanner" id="alert-banner" onclick="alertAnimation()">
+        <h1>Weather Warning</h1>
+        <div class="alert-btn-container">
+            <div class="alert-location"></div>
+            <p class="alert-info-btn">click for more information</p>
+        </div>
+        <div class="alert-statement" id="alert-statement">
+            <div class="alert-severity"></div>
+            <div class="alert-event"></div>
+            <div class="alert-description"></div>
+        </div>
+    </div>
     <section class="title">
         <h1>7 Day Weather Forecast <br> <span class="city"></span>, <span class="state"></span></h1>
     </section>

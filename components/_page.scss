@@ -1,3 +1,48 @@
+.alertBanner {
+    text-align: center;
+    background-color: red;
+    color: white;
+    padding: 1rem 0 1rem 0;
+    display: none;
+
+    .alert-location  {
+        margin: 0 auto;
+        width: 70%;
+    }
+
+}
+.alert-info-btn {
+    padding: 0.25rem .5rem;
+    background: white;
+    text-transform: capitalize; 
+    color: black;
+    margin: 0 auto;
+    width: fit-content;
+    border: 1px solid #000;
+    margin-top: 0.5rem;
+    border-radius: 1rem;
+
+}
+
+.alert-statement {
+    display: none;
+
+    > * {
+        padding: 0.5rem;
+        font-size: 1.2em;
+    }
+    &.news {
+        display: block;
+    }
+}
+
+.alert-description {
+    margin: 0 auto;
+    width: 80%;
+    padding: 0;
+    text-align: center;
+}
+  
 .title {
     text-align: center;
     margin-top: 2rem;
